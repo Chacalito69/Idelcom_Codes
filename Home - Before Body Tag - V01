@@ -1,0 +1,42 @@
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Para cada SVG con la clase 'icono-logo', guarda el color original y aplica el color por defecto (#8E9197)
+  document.querySelectorAll('.icono-logo').forEach(function(svg) {
+    // Obtiene el color original: primero del atributo 'fill', si no, lo obtiene del estilo calculado
+    var originalFill = svg.getAttribute('fill');
+    if (!originalFill) {
+      originalFill = window.getComputedStyle(svg).fill;
+    }
+    // Almacena el color original en un data attribute
+    svg.dataset.originalFill = originalFill;
+    // Establece el color por defecto
+    svg.style.fill = "#8E9197";
+  
+    // Al pasar el mouse sobre el SVG, restaura el color original
+    svg.addEventListener('mouseenter', function() {
+      svg.style.fill = svg.dataset.originalFill;
+    });
+    // Al quitar el mouse, vuelve al color por defecto
+    svg.addEventListener('mouseleave', function() {
+      svg.style.fill = "#8E9197";
+    });
+  });
+  
+  // Script existente para el manejo de tabs
+  document.querySelectorAll('.tabs-nav-item-underline').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      // Remueve la clase 'active' de todos los SVGs con la clase 'icono-logo'
+      document.querySelectorAll('.icono-logo.active').forEach(function(activeIcon) {
+        activeIcon.classList.remove('active');
+      });
+  
+      // Busca el SVG dentro del contenedor clickeado
+      const icon = this.querySelector('.icono-logo');
+      if (icon) {
+        // Agrega la clase 'active' al SVG encontrado
+        icon.classList.add('active');
+      }
+    });
+  });
+});
+</script>

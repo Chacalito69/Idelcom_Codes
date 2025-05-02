@@ -68,7 +68,7 @@
       },
       {
         nombre: "Sistemas Especiales",
-        descripcion: "Plataformas avanzadas en seguridad y comunicación que combinan videovigilancia, control de acceso, detección de intrusiones, telefonía IP, ciberseguridad y sistemas de radio. Cada solución está diseñada para ofrecer protección integral y operatividad en entornos críticos y dinámicos.",
+        descripcion: "Plataformas avanzadas en seguridad y comunicación que combinan videovigilancia, control de acceso, detección de intrusiones, telefonía IP, ciberseguridad, sistemas de radio y sistemas DACI para detección y extinción de incendios. Cada solución está diseñada para ofrecer protección integral y operatividad en entornos críticos y dinámicos.",
         imagen: "images/special-systems.jpg",
         lista: [
           {
